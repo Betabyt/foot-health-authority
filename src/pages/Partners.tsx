@@ -1,22 +1,43 @@
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { Heart, BarChart3, Leaf, Users, CheckCircle, ChevronRight } from "lucide-react";
+import { Heart, BarChart3, Leaf, Users, CheckCircle, ChevronRight, Building2, Landmark, Globe, Briefcase, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const tiers = [
-  { name: "Bronze", investment: "From R50,000", benefits: ["Logo on website", "Annual impact report", "CSR recognition certificate"] },
-  { name: "Silver", investment: "From R150,000", benefits: ["All Bronze benefits", "Sponsor a training cohort", "Quarterly impact updates", "Event co-branding"] },
-  { name: "Gold", investment: "From R500,000", benefits: ["All Silver benefits", "Provincial programme sponsorship", "Board observer seat", "Custom impact dashboard", "Media co-coverage"] },
-  { name: "Platinum", investment: "Custom", benefits: ["All Gold benefits", "National programme co-ownership", "Government engagement access", "Executive advisory role", "Full ESG reporting suite"] },
+const reasons = [
+  { icon: <Heart className="w-6 h-6" />, title: "Save lives directly", desc: "Every nurse you train becomes a sentinel against preventable amputation. R2,500 per nurse trained prevents complications costing the system R500,000." },
+  { icon: <BarChart3 className="w-6 h-6" />, title: "Measurable impact", desc: "Full transparency with quarterly dashboards, annual impact reports, and independently audited outcomes. Know exactly what your investment achieved." },
+  { icon: <Leaf className="w-6 h-6" />, title: "ESG & SDG alignment", desc: "Strong alignment with SDG 3 (Good Health and Well-being) and ESG social metrics. Reduces emergency admissions, improves referral quality, and enables auditing." },
+  { icon: <Users className="w-6 h-6" />, title: "Turnkey CSR programme", desc: "Co-branded materials, joint presentations, media coverage, and professional impact reporting — all included. You invest; we deliver and document." },
 ];
 
-const reasons = [
-  { icon: <Heart className="w-6 h-6" />, title: "Save Lives", desc: "Directly prevent amputations and improve quality of life for thousands." },
-  { icon: <BarChart3 className="w-6 h-6" />, title: "Measurable Impact", desc: "Full transparency with quarterly dashboards and annual reports." },
-  { icon: <Leaf className="w-6 h-6" />, title: "ESG Alignment", desc: "Strong alignment with SDG 3 (Good Health) and ESG social metrics." },
-  { icon: <Users className="w-6 h-6" />, title: "CSR Integration", desc: "Turnkey CSR programme with professional co-branding and reporting." },
+const channels = [
+  { icon: <Landmark className="w-6 h-6" />, title: "Provincial & District Government", desc: "Gauteng DOH (primary), National DOH (scale), district clinical teams, and facility managers.", colour: "bg-[#E8F4FD] text-[#0072BC]" },
+  { icon: <Building2 className="w-6 h-6" />, title: "Hospital & Clinical Institutions", desc: "Referral hospitals, limb-salvage programmes, nursing colleges, universities, and professional associations.", colour: "bg-[#E8F5E9] text-[#2E7D32]" },
+  { icon: <Globe className="w-6 h-6" />, title: "Foundations & Health Funders", desc: "Health innovation funders, WHO-aligned foundations, diabetes-focused grants and trusts.", colour: "bg-yellow-50 text-yellow-700" },
+  { icon: <Briefcase className="w-6 h-6" />, title: "Corporate CSR & Diabetes Portfolios", desc: "Companies with diabetes product portfolios or B-BBEE CSR obligations aligned to public health impact.", colour: "bg-orange-50 text-orange-700" },
+];
+
+const journey = [
+  { step: "1", title: "Pilot cohort", desc: "Co-fund a cohort of 15–20 nurses at a partnered clinic or hospital. Receive a detailed pre/post competency report." },
+  { step: "2", title: "Clinic toolkit rollout", desc: "Equip the clinic with monofilaments, laminated protocol cards, risk posters, and referral templates." },
+  { step: "3", title: "Data + impact report", desc: "Receive a branded quarterly impact report: screenings, referrals, nurse confidence, and estimated cost avoidance." },
+  { step: "4", title: "Scale contract", desc: "Evidence in hand, formalise a multi-site scale agreement with co-branding and ESG reporting included." },
+];
+
+const revenueMix = [
+  { label: "Government contracts", pct: "60%", colour: "bg-[#0072BC]" },
+  { label: "Foundation grants", pct: "25%", colour: "bg-[#4CAF50]" },
+  { label: "Corporate CSR", pct: "10%", colour: "bg-[#FF9800]" },
+  { label: "Private training", pct: "5%", colour: "bg-[#999999]" },
+];
+
+const tiers = [
+  { name: "Bronze", investment: "From R50,000", colour: "border-[#CD7F32]", benefits: ["Logo on website & materials", "Annual impact report", "CSR recognition certificate", "Acknowledgement at training events"] },
+  { name: "Silver", investment: "From R150,000", colour: "border-[#C0C0C0]", benefits: ["All Bronze benefits", "Sponsor a full training cohort (15–20 nurses)", "Quarterly impact updates", "Event co-branding"] },
+  { name: "Gold", investment: "From R500,000", colour: "border-[#FFD700]", benefits: ["All Silver benefits", "Provincial programme sponsorship", "Board observer seat", "Custom impact dashboard", "Media co-coverage"] },
+  { name: "Platinum", investment: "Custom", colour: "border-[#4CAF50] ring-2 ring-[#4CAF50]/20", benefits: ["All Gold benefits", "National programme co-ownership", "Government engagement access", "Executive advisory role", "Full ESG reporting suite"] },
 ];
 
 const Partners = () => (
@@ -24,15 +45,17 @@ const Partners = () => (
     <PageHero
       badge="Partnership & Sponsorship"
       title="Partner With EDU-FOOT™ NPC"
-      description="Join South Africa's leading initiative in diabetic foot screening. Your partnership directly prevents amputations and saves lives."
+      description="Join South Africa's leading initiative in diabetic foot screening. Your partnership directly prevents amputations, saves lives, and delivers measurable ESG impact."
     />
+
+    {/* Why partner */}
     <section className="section-padding bg-background">
       <div className="container mx-auto">
-        <SectionHeading badge="Why Partner" title="Make a Measurable Difference" />
+        <SectionHeading badge="Why Partner" title="Make a measurable difference" description="Every R2,500 invested in a trained nurse prevents complications costing the system R500,000. That's a conservative 10:1 social return on investment." />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="stat-card text-center">
-              <div className="w-12 h-12 mx-auto rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">{r.icon}</div>
+              <div className="w-12 h-12 mx-auto rounded-lg bg-[#E8F4FD] text-[#0072BC] flex items-center justify-center mb-4">{r.icon}</div>
               <h3 className="font-display font-semibold text-foreground mb-2">{r.title}</h3>
               <p className="text-sm text-muted-foreground">{r.desc}</p>
             </motion.div>
@@ -40,19 +63,98 @@ const Partners = () => (
         </div>
       </div>
     </section>
-    <section className="section-padding section-gradient">
+
+    {/* Partner journey */}
+    <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
       <div className="container mx-auto">
-        <SectionHeading badge="Sponsorship Tiers" title="Choose Your Level of Impact" />
+        <SectionHeading badge="Partner Journey" title="From pilot to national scale" description="A typical partner progresses through four stages — each backed by evidence and transparent reporting." />
+        <div className="flex flex-col md:flex-row gap-0 max-w-4xl mx-auto">
+          {journey.map((j, i) => (
+            <div key={i} className="flex md:flex-col items-start md:items-center flex-1 relative">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="stat-card w-full md:text-center border-t-4 border-[#0072BC]"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#0072BC] text-white font-display font-bold text-sm flex items-center justify-center mb-3 md:mx-auto">{j.step}</div>
+                <h4 className="font-display font-semibold text-foreground mb-2">{j.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">{j.desc}</p>
+              </motion.div>
+              {i < journey.length - 1 && (
+                <ArrowRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#0072BC]/40 z-10" />
+              )}
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-xs text-muted-foreground mt-6">
+          Outcome: measurable clinic behaviour change + evidence for scale funding.
+        </p>
+      </div>
+    </section>
+
+    {/* Primary channels */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <SectionHeading badge="Who We Work With" title="Primary partnership channels" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {channels.map((c, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="stat-card">
+              <div className={`w-11 h-11 rounded-lg flex items-center justify-center mb-4 ${c.colour}`}>{c.icon}</div>
+              <h3 className="font-display font-semibold text-foreground mb-2 text-sm">{c.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Revenue mix */}
+    <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
+      <div className="container mx-auto max-w-3xl">
+        <SectionHeading badge="Business Model" title="Diversified revenue with government as anchor" description="Revenue mix designed for sustainability — not reliant on any single funder." />
+        <div className="stat-card">
+          <div className="space-y-4">
+            {revenueMix.map((r, i) => (
+              <div key={i}>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-foreground font-medium">{r.label}</span>
+                  <span className="text-muted-foreground font-semibold">{r.pct}</span>
+                </div>
+                <div className="h-2.5 rounded-full bg-[#F5F5F5] overflow-hidden">
+                  <motion.div
+                    className={`h-full rounded-full ${r.colour}`}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: r.pct }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: i * 0.1 }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground mt-5 border-t border-border pt-4">
+            Public sector pricing: ~R2,500 per nurse trained (cost recovery, incl. materials). Private sector: ~R3,500. Grants subsidise underserved clinics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Sponsorship tiers */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <SectionHeading badge="Sponsorship Tiers" title="Choose your level of impact" />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {tiers.map((tier, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-              className={`stat-card ${i === 3 ? "border-accent ring-2 ring-accent/20" : ""}`}>
+              className={`stat-card border-t-4 ${tier.colour}`}>
               <h3 className="font-display font-bold text-xl text-foreground mb-1">{tier.name}</h3>
-              <p className="text-sm text-accent font-semibold mb-4">{tier.investment}</p>
+              <p className="text-sm text-[#0072BC] font-semibold mb-4">{tier.investment}</p>
               <ul className="space-y-2">
                 {tier.benefits.map((b, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-[#4CAF50] shrink-0 mt-0.5" />
                     {b}
                   </li>
                 ))}
