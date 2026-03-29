@@ -20,7 +20,7 @@ const PageHero = ({ badge, title, description, ctaLabel, ctaTo, children }: Page
       <img src={heroBg} alt="" className="h-full w-full object-cover object-center" />
       <div className="absolute inset-0 bg-[linear-gradient(122deg,rgba(26,58,92,0.96)_20%,rgba(0,114,188,0.86)_58%,rgba(46,125,50,0.78)_100%)]" />
     </div>
-    <div className="absolute -left-28 top-12 -z-10 h-80 w-80 rounded-full bg-gold/20 blur-[110px]" />
+    <div className="absolute -left-28 top-12 -z-10 h-80 w-80 rounded-full bg-edu-green/20 blur-[110px]" />
     <div className="absolute -right-20 bottom-0 -z-10 h-72 w-72 rounded-full bg-accent/25 blur-[95px]" />
     <div className="container mx-auto px-4 lg:px-8">
       <motion.div
@@ -31,7 +31,7 @@ const PageHero = ({ badge, title, description, ctaLabel, ctaTo, children }: Page
       >
         <div className="max-w-3xl">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground/90 backdrop-blur-md">
-            <Sparkles className="h-4 w-4 text-gold" />
+            <Sparkles className="h-4 w-4 text-edu-green" />
             {badge}
           </span>
           <h1 className="mb-5 text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.02] text-primary-foreground">{title}</h1>

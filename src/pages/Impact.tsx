@@ -61,7 +61,7 @@ const Impact = () => (
               className="stat-card text-center"
             >
               <div className="w-12 h-12 mx-auto rounded-full bg-[#E8F4FD] text-[#0072BC] flex items-center justify-center mb-3">{m.icon}</div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-[#0072BC] mb-1">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-[#0072BC] mb-1">
                 <AnimatedCounter end={m.value} suffix={m.suffix} prefix={m.prefix || ""} decimals={m.decimals || 0} />
               </div>
               <div className="text-sm font-medium text-foreground mb-1">{m.label}</div>
@@ -104,7 +104,7 @@ const Impact = () => (
               <Star className="w-5 h-5 text-[#FFC107]" />
               <span className="text-xs font-semibold uppercase tracking-wider text-white/70">Nurse confidence</span>
             </div>
-            <div className="flex items-end gap-4 mb-6">
+            <div className="flex flex-wrap items-end gap-4 mb-6">
               <div className="text-center">
                 <div className="font-display text-4xl font-bold text-white/50">3</div>
                 <div className="text-xs text-white/50 mt-1">Before EDU-FOOT</div>
@@ -157,18 +157,22 @@ const Impact = () => (
         <SectionHeading badge="Regional Data" title="Provincial screening statistics" />
         <div className="max-w-3xl mx-auto">
           <div className="stat-card overflow-hidden p-0">
-            <div className="grid grid-cols-3 bg-[#0072BC] text-white text-sm font-semibold">
-              <div className="p-4 flex items-center gap-2"><MapPin className="w-4 h-4" /> Province</div>
-              <div className="p-4 flex items-center gap-2"><BarChart3 className="w-4 h-4" /> Screenings</div>
-              <div className="p-4">Coverage</div>
-            </div>
-            {regions.map((r, i) => (
-              <div key={i} className={`grid grid-cols-3 text-sm ${i % 2 === 0 ? "bg-card" : "bg-[#E8F4FD]/40"}`}>
-                <div className="p-4 font-medium text-foreground">{r.name}</div>
-                <div className="p-4 text-muted-foreground">{r.screenings}</div>
-                <div className="p-4 font-semibold text-[#4CAF50]">{r.coverage}</div>
+            <div className="overflow-x-auto">
+              <div className="min-w-[320px]">
+                <div className="grid grid-cols-3 bg-[#0072BC] text-white text-sm font-semibold">
+                  <div className="p-3 sm:p-4 flex items-center gap-2"><MapPin className="w-4 h-4 shrink-0" /> Province</div>
+                  <div className="p-3 sm:p-4 flex items-center gap-2"><BarChart3 className="w-4 h-4 shrink-0" /> Screenings</div>
+                  <div className="p-3 sm:p-4">Coverage</div>
+                </div>
+                {regions.map((r, i) => (
+                  <div key={i} className={`grid grid-cols-3 text-sm ${i % 2 === 0 ? "bg-card" : "bg-[#E8F4FD]/40"}`}>
+                    <div className="p-3 sm:p-4 font-medium text-foreground">{r.name}</div>
+                    <div className="p-3 sm:p-4 text-muted-foreground">{r.screenings}</div>
+                    <div className="p-3 sm:p-4 font-semibold text-[#4CAF50]">{r.coverage}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

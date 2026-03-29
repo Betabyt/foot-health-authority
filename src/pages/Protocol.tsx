@@ -2,6 +2,8 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Users, Eye, Hand, Activity, Zap, ClipboardCheck, Shield, FileText, CheckCircle, Flame, Thermometer, GitMerge } from "lucide-react";
+import infographic from "@/assets/EDU-FOOT_INFORGRAPHIC.png";
+import redFlagsPoster from "@/assets/EDU-FOOT.RED_FLAGS_FINAL.A5.Poster.25.01.2026.png";
 
 const steps = [
   {
@@ -106,14 +108,14 @@ const Protocol = () => (
     {/* Protocol intro callout */}
     <section className="bg-[#E8F4FD] border-b border-[#0072BC]/20 py-6">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap gap-6 justify-center text-center">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 text-center">
           {[
             { label: "Total screening time", value: "≤5 minutes" },
             { label: "Monofilament predictive value", value: "90%" },
             { label: "Works without electricity", value: "Yes" },
             { label: "Validated for low-resource clinics", value: "Yes" },
           ].map((item, i) => (
-            <div key={i} className="px-6">
+            <div key={i} className="py-2">
               <div className="font-display font-bold text-xl text-[#0072BC]">{item.value}</div>
               <div className="text-xs text-[#1A3A5C] mt-0.5">{item.label}</div>
             </div>
@@ -163,6 +165,16 @@ const Protocol = () => (
       </div>
     </section>
 
+    {/* Infographic visual */}
+    <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
+      <div className="container mx-auto">
+        <SectionHeading badge="Visual Reference" title="The protocol at a glance" description="A single-page visual summary of the full ASK–LOOK–FEEL–TEST–ACT workflow for clinic use." />
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-md mx-auto">
+          <img src={infographic} alt="EDU-FOOT ASK–LOOK–FEEL–TEST–ACT protocol infographic" className="w-full rounded-2xl shadow-lg" />
+        </motion.div>
+      </div>
+    </section>
+
     {/* Risk classification matrix */}
     <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
       <div className="container mx-auto">
@@ -201,7 +213,7 @@ const Protocol = () => (
     <section className="section-padding bg-background">
       <div className="container mx-auto">
         <SectionHeading badge="First-Line Care" title="What nurses can manage vs. refer" description="EDU-FOOT trains nurses to act immediately on common findings — and to escalate correctly when specialist care is needed." />
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="stat-card border-t-4 border-[#4CAF50]">
             <div className="text-xs font-bold text-[#4CAF50] uppercase tracking-wider mb-4">Nurse can manage</div>
             <ul className="space-y-3">
@@ -237,6 +249,9 @@ const Protocol = () => (
               ))}
               <p className="text-xs text-muted-foreground pt-2">All Red-risk referrals must be completed within 24 hours using the WhatsApp tele-referral template with standardised photo documentation.</p>
             </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+            <img src={redFlagsPoster} alt="EDU-FOOT Red Flags — Urgent Action Required poster" className="w-full rounded-2xl shadow-md" />
           </motion.div>
         </div>
       </div>

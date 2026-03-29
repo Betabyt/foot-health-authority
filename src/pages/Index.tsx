@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import heroBg from "@/assets/hero-bg.jpg";
+import integratedVideo from "@/assets/EDU-FOOT.INTERGRATED.VIDEO.mp4";
 
 const signalStats = [
   { value: 4.6, suffix: "M", label: "People living with diabetes", decimals: 1 },
@@ -47,7 +48,7 @@ const Index = () => {
           <img src={heroBg} alt="" className="h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[linear-gradient(122deg,rgba(26,58,92,0.94)_20%,rgba(0,114,188,0.84)_56%,rgba(46,125,50,0.78)_100%)]" />
         </div>
-        <div className="absolute left-1/2 top-16 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-gold/20 blur-[100px]" />
+        <div className="absolute left-1/2 top-16 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-edu-green/20 blur-[100px]" />
         <div className="container mx-auto px-4 pb-20 pt-16 md:pb-24 md:pt-24 lg:pt-28">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -57,12 +58,12 @@ const Index = () => {
           >
             <div>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-md">
-                <Sparkles className="h-4 w-4 text-gold" />
+                <Sparkles className="h-4 w-4 text-edu-green" />
                 National Diabetic Foot Screening Program
               </div>
-              <h1 className="max-w-4xl font-display text-4xl font-extrabold leading-[0.98] text-white md:text-6xl xl:text-7xl">
+              <h1 className="max-w-4xl font-display text-3xl font-extrabold leading-[0.98] text-white sm:text-4xl md:text-6xl xl:text-7xl">
                 The New Gold Standard for
-                <span className="mt-2 block text-gold">Preventive Foot Care</span>
+                <span className="mt-2 block text-edu-green">Preventive Foot Care</span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-xl">
                 We equip frontline nurses with a fast, repeatable workflow that turns foot screenings into a national prevention engine.
@@ -98,7 +99,7 @@ const Index = () => {
                     <p className="mt-1 text-xs leading-snug text-white/70">{stat.label}</p>
                     <div className="mt-3 h-1 rounded-full bg-white/15">
                       <motion.div
-                        className="h-full rounded-full bg-gold"
+                        className="h-full rounded-full bg-edu-green"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${(index + 2) * 20}%` }}
                         viewport={{ once: true }}
@@ -127,7 +128,7 @@ const Index = () => {
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid gap-4 md:grid-cols-5">
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
             {fiveMinuteProtocol.map((step, index) => (
               <motion.div
                 key={step.title}
@@ -152,7 +153,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="rounded-3xl bg-[radial-gradient(circle_at_15%_15%,#0072BC_0%,#1A3A5C_52%,#0d1f3b_100%)] p-8 md:p-12">
             <div className="mb-10 text-center md:mb-12">
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold">Measured Outcomes</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-edu-green">Measured Outcomes</p>
               <h2 className="mt-3 font-display text-3xl font-bold text-white md:text-5xl">Evidence that scales nationally</h2>
             </div>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -165,7 +166,7 @@ const Index = () => {
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-sm"
                 >
-                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-gold">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-edu-green">
                     {metric.icon}
                   </div>
                   <p className="mt-4 font-display text-3xl font-bold text-white">
@@ -176,6 +177,21 @@ const Index = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Integrated video */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary mb-2">See it in action</p>
+            <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">EDU-FOOT in practice</h2>
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-lg">
+            <video controls className="w-full" poster={heroBg}>
+              <source src={integratedVideo} type="video/mp4" />
+            </video>
+          </motion.div>
         </div>
       </section>
 

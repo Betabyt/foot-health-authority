@@ -2,6 +2,8 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Building2, Users, Award, FileCheck, User, Target, Eye, Heart, CheckCircle, Landmark, BookOpen, BarChart3, Globe } from "lucide-react";
+import logoVideo from "@/assets/EDU-FOOT.Video.LOGO.mp4";
+import logoVideo3 from "@/assets/EDU-FOOT.Video.LOGO.3.mp4";
 
 const team = [
   {
@@ -175,6 +177,22 @@ const About = () => (
                 <h4 className="font-display font-semibold text-foreground mb-1">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Brand videos */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <SectionHeading badge="Brand Identity" title="EDU-FOOT™ in motion" description="Our visual identity communicates the urgency, clarity, and hope behind every screening." />
+        <div className="grid md:grid-cols-2 gap-6">
+          {[logoVideo, logoVideo3].map((src, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="rounded-2xl overflow-hidden shadow-md bg-[#1A3A5C]">
+              <video autoPlay loop muted playsInline className="w-full">
+                <source src={src} type="video/mp4" />
+              </video>
             </motion.div>
           ))}
         </div>

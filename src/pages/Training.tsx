@@ -170,24 +170,28 @@ const Training = () => (
         <SectionHeading badge="Educational Innovation" title="Competency over attendance" description="Why EDU-FOOT achieves sustained clinic behaviour change where traditional CPD does not." />
         <div className="max-w-3xl mx-auto">
           <div className="stat-card overflow-hidden p-0">
-            <div className="grid grid-cols-3 text-sm font-semibold">
-              <div className="p-4 bg-[#F5F5F5] text-foreground">Aspect</div>
-              <div className="p-4 bg-[#F5F5F5] text-muted-foreground text-center">Traditional CPD</div>
-              <div className="p-4 bg-[#0072BC] text-white text-center">EDU-FOOT Model</div>
-            </div>
-            {comparison.map((row, i) => (
-              <div key={i} className={`grid grid-cols-3 text-sm border-t border-border ${i % 2 === 0 ? "bg-card" : "bg-[#F5F5F5]/40"}`}>
-                <div className="p-4 font-medium text-foreground">{row.aspect}</div>
-                <div className="p-4 text-muted-foreground text-center flex items-center justify-center gap-1.5">
-                  <X className="w-3.5 h-3.5 text-[#F44336] shrink-0" />
-                  {row.traditional}
+            <div className="overflow-x-auto">
+              <div className="min-w-[480px]">
+                <div className="grid grid-cols-3 text-sm font-semibold">
+                  <div className="p-3 sm:p-4 bg-[#F5F5F5] text-foreground">Aspect</div>
+                  <div className="p-3 sm:p-4 bg-[#F5F5F5] text-muted-foreground text-center">Traditional CPD</div>
+                  <div className="p-3 sm:p-4 bg-[#0072BC] text-white text-center">EDU-FOOT Model</div>
                 </div>
-                <div className="p-4 text-[#2E7D32] font-medium text-center flex items-center justify-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#4CAF50] shrink-0" />
-                  {row.edufoot}
-                </div>
+                {comparison.map((row, i) => (
+                  <div key={i} className={`grid grid-cols-3 text-sm border-t border-border ${i % 2 === 0 ? "bg-card" : "bg-[#F5F5F5]/40"}`}>
+                    <div className="p-3 sm:p-4 font-medium text-foreground">{row.aspect}</div>
+                    <div className="p-3 sm:p-4 text-muted-foreground text-center flex items-center justify-center gap-1.5">
+                      <X className="w-3.5 h-3.5 text-[#F44336] shrink-0" />
+                      {row.traditional}
+                    </div>
+                    <div className="p-3 sm:p-4 text-[#2E7D32] font-medium text-center flex items-center justify-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-[#4CAF50] shrink-0" />
+                      {row.edufoot}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
@@ -199,24 +203,28 @@ const Training = () => (
         <SectionHeading badge="Assessment Blueprint" title="How certification is earned" description="Nurses must pass all three components. Certification is not issued for partial completion or attendance alone." />
         <div className="max-w-3xl mx-auto mb-10">
           <div className="stat-card overflow-hidden p-0">
-            <div className="grid grid-cols-4 bg-[#0072BC] text-white text-xs font-semibold">
-              <div className="p-4">Component</div>
-              <div className="p-4">Format</div>
-              <div className="p-4 text-center">Weight</div>
-              <div className="p-4">Pass Requirement</div>
-            </div>
-            {assessmentComponents.map((row, i) => (
-              <div key={i} className={`grid grid-cols-4 text-sm border-t border-border ${i % 2 === 0 ? "bg-card" : "bg-[#F5F5F5]/40"}`}>
-                <div className="p-4 font-semibold text-foreground">{row.component}</div>
-                <div className="p-4 text-muted-foreground">{row.format}</div>
-                <div className="p-4 text-center">
-                  <span className={`inline-block text-xs font-bold px-2 py-1 rounded-full ${row.colour}`}>{row.weight}</span>
+            <div className="overflow-x-auto">
+              <div className="min-w-[520px]">
+                <div className="grid grid-cols-4 bg-[#0072BC] text-white text-xs font-semibold">
+                  <div className="p-3 sm:p-4">Component</div>
+                  <div className="p-3 sm:p-4">Format</div>
+                  <div className="p-3 sm:p-4 text-center">Weight</div>
+                  <div className="p-3 sm:p-4">Pass Requirement</div>
                 </div>
-                <div className="p-4 text-muted-foreground">{row.pass}</div>
+                {assessmentComponents.map((row, i) => (
+                  <div key={i} className={`grid grid-cols-4 text-sm border-t border-border ${i % 2 === 0 ? "bg-card" : "bg-[#F5F5F5]/40"}`}>
+                    <div className="p-3 sm:p-4 font-semibold text-foreground">{row.component}</div>
+                    <div className="p-3 sm:p-4 text-muted-foreground">{row.format}</div>
+                    <div className="p-3 sm:p-4 text-center">
+                      <span className={`inline-block text-xs font-bold px-2 py-1 rounded-full ${row.colour}`}>{row.weight}</span>
+                    </div>
+                    <div className="p-3 sm:p-4 text-muted-foreground">{row.pass}</div>
+                  </div>
+                ))}
+                <div className="p-3 sm:p-4 bg-[#E8F5E9] border-t border-border text-xs text-[#2E7D32] font-semibold">
+                  Overall: 100% attendance + pass all components → EDU-FOOT Foot Screening Competency Certificate issued
+                </div>
               </div>
-            ))}
-            <div className="p-4 bg-[#E8F5E9] border-t border-border text-xs text-[#2E7D32] font-semibold">
-              Overall: 100% attendance + pass all components → EDU-FOOT Foot Screening Competency Certificate issued
             </div>
           </div>
         </div>

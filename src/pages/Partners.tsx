@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Heart, BarChart3, Leaf, Users, CheckCircle, ChevronRight, Building2, Landmark, Globe, Briefcase, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import proposalCover from "@/assets/LOOK.FEEL.SMELL.ACT.png";
 
 const reasons = [
   { icon: <Heart className="w-6 h-6" />, title: "Save lives directly", desc: "Every nurse you train becomes a sentinel against preventable amputation. R2,500 per nurse trained prevents complications costing the system R500,000." },
@@ -166,6 +167,27 @@ const Partners = () => (
           <Link to="/contact">
             <Button variant="cta" size="lg">Request Partnership Proposal <ChevronRight className="w-5 h-5" /></Button>
           </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* Proposal visual */}
+    <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
+      <div className="container mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 items-center max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <img src={proposalCover} alt="EDU-FOOT partnership proposal" className="w-full rounded-2xl shadow-lg" />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <p className="text-xs font-bold text-[#0072BC] uppercase tracking-wider mb-3">Partnership Proposal</p>
+            <h3 className="font-display text-2xl font-bold text-foreground mb-4">Step Ahead of Amputation</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              Our full partnership proposal outlines the programme, delivery model, sponsorship tiers, and impact reporting framework. Request a copy to explore how your organisation can be part of the solution.
+            </p>
+            <Link to="/contact">
+              <Button variant="cta">Request the Proposal <ChevronRight className="w-5 h-5" /></Button>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

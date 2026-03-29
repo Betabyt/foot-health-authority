@@ -89,7 +89,7 @@ const Crisis = () => (
               transition={{ delay: i * 0.08 }}
               className="stat-card text-center"
             >
-              <div className="text-3xl md:text-4xl font-display font-bold text-[#0072BC] mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-[#0072BC] mb-2">
                 <AnimatedCounter end={s.value} suffix={s.suffix} prefix={s.prefix || ""} decimals={s.decimals || 0} />
               </div>
               <div className="text-sm text-muted-foreground">{s.label}</div>
