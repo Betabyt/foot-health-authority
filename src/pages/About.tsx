@@ -70,10 +70,17 @@ const About = () => (
     <section className="section-padding bg-background">
       <div className="container mx-auto max-w-4xl">
         <SectionHeading badge="Our Story" title="Born from a preventable crisis" centered={false} />
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8 rounded-xl bg-[#0072BC] px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="font-display font-bold text-2xl text-white shrink-0">EDU-FOOT™</div>
+          <div>
+            <div className="text-white/90 text-sm font-medium">Every Diabetic Ulcer Footcare-Oriented Outcome Training</div>
+            <div className="text-white/60 text-xs italic mt-0.5">Step Ahead of Amputation</div>
+          </div>
+        </motion.div>
         <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4 mb-12">
           <p>EDU-FOOT™ NPC was founded in January 2026 in direct response to South Africa's escalating diabetes-related amputation crisis. With over 27,000 amputations occurring annually — 84% of which are preceded by foot ulcers that could have been detected with basic screening — the need for a structured, scalable nurse training solution was urgent.</p>
           <p>Founder Mazizi Njokweni, a Senior Podiatrist with first-hand clinical experience of the amputation cascade, established EDU-FOOT™ to bridge the critical gap between specialist foot care knowledge and frontline PHC delivery. The organisation's core insight: nurses want to screen, but lack the time, tools, and training to do so consistently.</p>
-          <p>The EDU-FOOT™ model packages a validated ≤5-minute screening protocol, a hands-on 2-day training programme, a full clinic toolkit, and 12 months of implementation coaching into a single, deployable solution — designed for the realities of South African primary healthcare.</p>
+          <p>The EDU-FOOT™ model packages a validated ≤7-minute screening protocol, a hands-on 2-day training programme, a full clinic toolkit, and 12 months of implementation coaching into a single, deployable solution — designed for the realities of South African primary healthcare. The programme is embedded within Leratong Hospital's Amputation Prevention Protocol (APP) and Gauteng's Limb Salvage Programme, ensuring alignment with provincial and national health priorities.</p>
         </div>
 
         {/* Mission & Vision */}

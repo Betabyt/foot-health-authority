@@ -11,6 +11,8 @@ const reasons = [
   { icon: <BarChart3 className="w-6 h-6" />, title: "Measurable impact", desc: "Full transparency with quarterly dashboards, annual impact reports, and independently audited outcomes. Know exactly what your investment achieved." },
   { icon: <Leaf className="w-6 h-6" />, title: "ESG & SDG alignment", desc: "Strong alignment with SDG 3 (Good Health and Well-being) and ESG social metrics. Reduces emergency admissions, improves referral quality, and enables auditing." },
   { icon: <Users className="w-6 h-6" />, title: "Turnkey CSR programme", desc: "Co-branded materials, joint presentations, media coverage, and professional impact reporting — all included. You invest; we deliver and document." },
+  { icon: <Globe className="w-6 h-6" />, title: "Market insights", desc: "Gain first-hand insights into public sector wound care needs, supply gaps, and clinical practice patterns across South African primary healthcare facilities." },
+  { icon: <Briefcase className="w-6 h-6" />, title: "Professional engagement", desc: "Your clinical teams participate as guest trainers in wound care and infection control sessions — meaningful engagement for your healthcare professionals." },
 ];
 
 const channels = [
@@ -35,10 +37,48 @@ const revenueMix = [
 ];
 
 const tiers = [
-  { name: "Bronze", investment: "From R50,000", colour: "border-[#CD7F32]", benefits: ["Logo on website & materials", "Annual impact report", "CSR recognition certificate", "Acknowledgement at training events"] },
-  { name: "Silver", investment: "From R150,000", colour: "border-[#C0C0C0]", benefits: ["All Bronze benefits", "Sponsor a full training cohort (15–20 nurses)", "Quarterly impact updates", "Event co-branding"] },
-  { name: "Gold", investment: "From R500,000", colour: "border-[#FFD700]", benefits: ["All Silver benefits", "Provincial programme sponsorship", "Board observer seat", "Custom impact dashboard", "Media co-coverage"] },
-  { name: "Platinum", investment: "Custom", colour: "border-[#4CAF50] ring-2 ring-[#4CAF50]/20", benefits: ["All Gold benefits", "National programme co-ownership", "Government engagement access", "Executive advisory role", "Full ESG reporting suite"] },
+  {
+    name: "Silver",
+    subtitle: "Training Sponsor",
+    investment: "R100,000 – R250,000 p.a.",
+    colour: "border-[#C0C0C0]",
+    benefits: [
+      "Logo on EDU-FOOT materials & website",
+      "Sponsorship of specific training modules",
+      "Support for mobile app development",
+      "Nurse scholarship programme",
+      "Annual impact report",
+      "CSR recognition certificate",
+    ],
+  },
+  {
+    name: "Gold",
+    subtitle: "Programme Facilitator",
+    investment: "R250,000 – R500,000 p.a.",
+    colour: "border-[#FFD700]",
+    benefits: [
+      "All Silver benefits",
+      "In-kind donated wound care products & educational materials",
+      "Involvement in annual symposium & case study development",
+      "Quarterly impact updates",
+      "Event co-branding",
+      "Provincial programme sponsorship",
+    ],
+  },
+  {
+    name: "Platinum",
+    subtitle: "Comprehensive Support",
+    investment: "R500,000+ p.a.",
+    colour: "border-[#4CAF50] ring-2 ring-[#4CAF50]/20",
+    benefits: [
+      "All Gold benefits",
+      "Wound care kits, monofilaments & Doppler devices supplied",
+      "Logo on all EDU-FOOT materials as founding partner",
+      "Company experts as guest trainers (wound care, infection control)",
+      "Custom impact dashboard & full ESG reporting suite",
+      "National programme co-ownership & government engagement access",
+    ],
+  },
 ];
 
 const Partners = () => (
@@ -53,7 +93,7 @@ const Partners = () => (
     <section className="section-padding bg-background">
       <div className="container mx-auto">
         <SectionHeading badge="Why Partner" title="Make a measurable difference" description="Every R2,500 invested in a trained nurse prevents complications costing the system R500,000. That's a conservative 10:1 social return on investment." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((r, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="stat-card text-center">
               <div className="w-12 h-12 mx-auto rounded-lg bg-[#E8F4FD] text-[#0072BC] flex items-center justify-center mb-4">{r.icon}</div>
@@ -69,24 +109,25 @@ const Partners = () => (
     <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
       <div className="container mx-auto">
         <SectionHeading badge="Partner Journey" title="From pilot to national scale" description="A typical partner progresses through four stages — each backed by evidence and transparent reporting." />
-        <div className="flex flex-col md:flex-row gap-0 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-3 max-w-5xl mx-auto">
           {journey.map((j, i) => (
-            <div key={i} className="flex md:flex-col items-start md:items-center flex-1 relative">
+            <>
               <motion.div
+                key={j.step}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="stat-card w-full md:text-center border-t-4 border-[#0072BC]"
+                className="stat-card flex-1 w-full md:text-center border-t-4 border-[#0072BC]"
               >
-                <div className="w-8 h-8 rounded-full bg-[#0072BC] text-white font-display font-bold text-sm flex items-center justify-center mb-3 md:mx-auto">{j.step}</div>
+                <div className="w-9 h-9 rounded-full bg-[#0072BC] text-white font-display font-bold text-sm flex items-center justify-center mb-3 md:mx-auto">{j.step}</div>
                 <h4 className="font-display font-semibold text-foreground mb-2">{j.title}</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">{j.desc}</p>
               </motion.div>
               {i < journey.length - 1 && (
-                <ArrowRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#0072BC]/40 z-10" />
+                <ArrowRight key={`arrow-${i}`} className="hidden md:block shrink-0 w-5 h-5 text-[#0072BC]/40" />
               )}
-            </div>
+            </>
           ))}
         </div>
         <p className="text-center text-xs text-muted-foreground mt-6">
@@ -146,11 +187,12 @@ const Partners = () => (
     <section className="section-padding bg-background">
       <div className="container mx-auto">
         <SectionHeading badge="Sponsorship Tiers" title="Choose your level of impact" />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {tiers.map((tier, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               className={`stat-card border-t-4 ${tier.colour}`}>
-              <h3 className="font-display font-bold text-xl text-foreground mb-1">{tier.name}</h3>
+              <h3 className="font-display font-bold text-xl text-foreground mb-0.5">{tier.name}</h3>
+              <p className="text-xs text-muted-foreground mb-1">{tier.subtitle}</p>
               <p className="text-sm text-[#0072BC] font-semibold mb-4">{tier.investment}</p>
               <ul className="space-y-2">
                 {tier.benefits.map((b, j) => (
@@ -166,6 +208,33 @@ const Partners = () => (
         <div className="text-center mt-12">
           <Link to="/contact">
             <Button variant="cta" size="lg">Request Partnership Proposal <ChevronRight className="w-5 h-5" /></Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    {/* Next steps */}
+    <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
+      <div className="container mx-auto max-w-3xl">
+        <SectionHeading badge="How to Partner" title="Three steps to formalise collaboration" description="We invite pharmaceutical, wound care, and diabetic care companies to join us as strategic partners." />
+        <div className="space-y-4">
+          {[
+            { step: "1", title: "Schedule a meeting", desc: "Connect with Mazizi Njokweni and the EDU-FOOT team to discuss your organisation's goals and explore the partnership tier that fits best." },
+            { step: "2", title: "Review the programme blueprint", desc: "We'll share the full programme documentation, impact data, and co-design specific partnership deliverables tailored to your CSR or ESG objectives." },
+            { step: "3", title: "Sign a Memorandum of Understanding", desc: "Formalise the collaboration with a clear MOU outlining responsibilities, reporting cadence, and co-branding arrangements." },
+          ].map((s, i) => (
+            <motion.div key={i} initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="stat-card flex gap-5 items-start">
+              <div className="w-10 h-10 rounded-full bg-[#0072BC] text-white font-display font-bold text-base flex items-center justify-center shrink-0">{s.step}</div>
+              <div>
+                <h4 className="font-display font-semibold text-foreground mb-1">{s.title}</h4>
+                <p className="text-sm text-muted-foreground">{s.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link to="/contact">
+            <Button variant="cta" size="lg">Start the Conversation <ChevronRight className="w-5 h-5" /></Button>
           </Link>
         </div>
       </div>

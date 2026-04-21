@@ -135,6 +135,31 @@ const Crisis = () => (
       </div>
     </section>
 
+    {/* Screening evidence */}
+    <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
+      <div className="container mx-auto">
+        <SectionHeading badge="The Evidence" title="Screening works — when nurses have the tools" description="Structured diabetic foot screening dramatically reduces amputations. The barrier is not science — it is access to training and equipment." />
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { stat: "45–85%", label: "Reduction in ulcer incidence", detail: "Achieved through structured screening using the 10g monofilament test (Singh et al., 2005; Bakker et al., 2016)." },
+            { stat: "90%", label: "Sensitivity for predicting ulceration", detail: "The 10g monofilament test identifies neuropathy with 90% sensitivity, enabling early intervention before ulcers form (Adler et al., 1997)." },
+            { stat: "12%", label: "PHC clinics with monofilaments", detail: "Only 12% of Gauteng primary healthcare facilities have the basic monofilament needed to perform neuropathy screening (Njokweni, 2024)." },
+          ].map((s, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="stat-card text-center border-t-4 border-[#0072BC]">
+              <div className="font-display text-4xl font-bold text-[#0072BC] mb-2">{s.stat}</div>
+              <div className="font-semibold text-foreground text-sm mb-2">{s.label}</div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{s.detail}</p>
+            </motion.div>
+          ))}
+        </div>
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-8 max-w-3xl mx-auto rounded-xl bg-[#1A3A5C] p-6 text-center">
+          <p className="text-white/90 text-sm leading-relaxed">
+            The solution is not complex. A ≤7-minute foot screen using the <strong className="text-edu-green">ASK–LOOK–FEEL–TEST–ACT</strong> protocol, performed at every diabetic patient visit, can identify 73% of currently missed neuropathy cases — before they become ulcers, infections, or amputations.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+
     {/* Cost callout */}
     <section className="section-padding">
       <div className="container mx-auto">

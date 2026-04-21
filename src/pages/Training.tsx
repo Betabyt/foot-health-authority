@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { BookOpen, Award, Video, ClipboardCheck, GraduationCap, Users, CheckCircle, X, Smartphone, HeartHandshake, Layers, Star, Quote, Zap } from "lucide-react";
+import { BookOpen, Award, Video, ClipboardCheck, GraduationCap, Users, CheckCircle, X, Smartphone, HeartHandshake, Layers, Star, Quote, Zap, Landmark, Globe, BarChart3, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -307,7 +307,28 @@ const Training = () => (
           </p>
         </motion.div>
 
-        <div className="text-center">
+        {/* Framework alignment */}
+        <div className="mt-12">
+          <SectionHeading badge="Framework Alignment" title="Built on international & national standards" description="EDU-FOOT is not standalone — it is embedded within four established frameworks for sustained impact." />
+          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+            {[
+              { icon: <FileText className="w-5 h-5" />, title: "Amputation Prevention Protocol (APP)", desc: "Leratong Hospital's podiatry-led triage model with infection and ischaemia pathways — the clinical backbone of EDU-FOOT." },
+              { icon: <Globe className="w-5 h-5" />, title: "IWGDF Guidelines", desc: "International Working Group on the Diabetic Foot (Schaper et al., 2016) — global standards for DFU care, adapted for South African clinical realities." },
+              { icon: <Landmark className="w-5 h-5" />, title: "Gauteng Limb Salvage Programme", desc: "Provincial amputation reduction strategy built on four pillars: screening, hotline, wound clinic, and remission." },
+              { icon: <BarChart3 className="w-5 h-5" />, title: "ICDM Framework (NDoH)", desc: "Integrated Chronic Disease Management — national framework for coordinated chronic care, within which EDU-FOOT operates seamlessly." },
+            ].map((f, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="stat-card flex gap-4 items-start">
+                <div className="w-9 h-9 rounded-lg bg-[#E8F5E9] text-[#2E7D32] flex items-center justify-center shrink-0">{f.icon}</div>
+                <div>
+                  <h4 className="font-display font-semibold text-foreground text-sm mb-1">{f.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
           <h2 className="text-2xl font-display font-bold text-foreground mb-4">Ready to get certified?</h2>
           <p className="text-muted-foreground mb-6 max-w-lg mx-auto text-sm">
             Contact us to enrol in the next training cohort or request on-site training for your facility. Cohorts run every month across Gauteng.

@@ -17,6 +17,9 @@ const Footer = () => {
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               South Africa's national authority on diabetic foot screening and amputation prevention.
             </p>
+            <p className="text-primary-foreground/40 text-xs mt-2 leading-relaxed">
+              Every Diabetic Ulcer Footcare-Oriented Outcome Training
+            </p>
           </div>
 
           {/* Quick Links */}
@@ -61,10 +64,11 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-sm uppercase tracking-wider text-primary-foreground/50">Contact</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li>info@edu-foot.org.za</li>
-              <li>Cape Town, South Africa</li>
+              <li>mazizinjokweni@gmail.com</li>
+              <li>+27 74 463 9939</li>
+              <li>Leratong Hospital, Gauteng</li>
               <li className="pt-2 text-xs text-primary-foreground/40">
-                NPC Registration No. Pending
+                CIPC Reg. No. 2026/045897/08
               </li>
             </ul>
           </div>
