@@ -46,7 +46,7 @@ const milestones = [
   "Pilot programme conducted at Adcock Ingram facilities",
   "ASK–LOOK–FEEL–TEST–ACT protocol finalised",
   "SANC CPD accreditation application submitted",
-  "Leratong Hospital proof-of-concept: 92% screening coverage achieved",
+  "Gauteng pilot site proof-of-concept: 92% screening coverage achieved",
   "35% reduction in emergency amputations at pilot site",
   "R4.5M in estimated cost savings from prevented amputations",
 ];
@@ -80,7 +80,7 @@ const About = () => (
         <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4 mb-12">
           <p>EDU-FOOT™ NPC was founded in January 2026 in direct response to South Africa's escalating diabetes-related amputation crisis. With over 27,000 amputations occurring annually — 84% of which are preceded by foot ulcers that could have been detected with basic screening — the need for a structured, scalable nurse training solution was urgent.</p>
           <p>Founder Mazizi Njokweni, a Senior Podiatrist with first-hand clinical experience of the amputation cascade, established EDU-FOOT™ to bridge the critical gap between specialist foot care knowledge and frontline PHC delivery. The organisation's core insight: nurses want to screen, but lack the time, tools, and training to do so consistently.</p>
-          <p>The EDU-FOOT™ model packages a validated ≤7-minute screening protocol, a hands-on 2-day training programme, a full clinic toolkit, and 12 months of implementation coaching into a single, deployable solution — designed for the realities of South African primary healthcare. The programme is embedded within Leratong Hospital's Amputation Prevention Protocol (APP) and Gauteng's Limb Salvage Programme, ensuring alignment with provincial and national health priorities.</p>
+          <p>The EDU-FOOT™ model packages a validated ≤7-minute screening protocol, a hands-on 2-day training programme, a full clinic toolkit, and 12 months of implementation coaching into a single, deployable solution — designed for the realities of South African primary healthcare. The programme is embedded within the Amputation Prevention Protocol (APP) and Gauteng's Limb Salvage Programme, ensuring alignment with provincial and national health priorities.</p>
         </div>
 
         {/* Mission & Vision */}

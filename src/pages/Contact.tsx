@@ -37,19 +37,21 @@ const Contact = () => {
               <div className="stat-card border-t-4 border-[#0072BC] mb-2">
                 <div className="text-xs font-bold text-[#0072BC] uppercase tracking-wider mb-1">Direct Contact</div>
                 <p className="text-sm font-semibold text-foreground">Mazizi Njokweni</p>
-                <p className="text-xs text-muted-foreground">Founder & Director · Senior Podiatrist, Leratong Hospital</p>
+                <p className="text-xs text-muted-foreground">Founder & Director · Senior Podiatrist</p>
+                <a href="mailto:info@edufoot.org" className="text-xs text-[#0072BC] font-medium mt-1 block hover:underline">info@edufoot.org</a>
               </div>
               {[
-                { icon: <Mail className="w-5 h-5" />, label: "Email", value: "mazizinjokweni@gmail.com" },
+                { icon: <Mail className="w-5 h-5" />, label: "General Enquiries", value: "info@edufoot.org" },
+                { icon: <Mail className="w-5 h-5" />, label: "Sponsorship", value: "sponsorship@edufoot.org" },
                 { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "+27 74 463 9939" },
-                { icon: <MapPin className="w-5 h-5" />, label: "Office", value: "Leratong Hospital, Mogale City, Gauteng" },
                 { icon: <MessageCircle className="w-5 h-5" />, label: "WhatsApp", value: "+27 74 463 9939" },
+                { icon: <MapPin className="w-5 h-5" />, label: "Office", value: "Princeton, The Campus\n152 Van Dalen Road South\nRuimsig, Roodepoort\nGauteng, 1724" },
               ].map((c, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">{c.icon}</div>
                   <div>
                     <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium">{c.label}</div>
-                    <div className="text-sm text-foreground font-medium">{c.value}</div>
+                    <div className="text-sm text-foreground font-medium whitespace-pre-line">{c.value}</div>
                   </div>
                 </div>
               ))}

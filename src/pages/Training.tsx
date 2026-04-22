@@ -312,7 +312,7 @@ const Training = () => (
           <SectionHeading badge="Framework Alignment" title="Built on international & national standards" description="EDU-FOOT is not standalone — it is embedded within four established frameworks for sustained impact." />
           <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {[
-              { icon: <FileText className="w-5 h-5" />, title: "Amputation Prevention Protocol (APP)", desc: "Leratong Hospital's podiatry-led triage model with infection and ischaemia pathways — the clinical backbone of EDU-FOOT." },
+              { icon: <FileText className="w-5 h-5" />, title: "Amputation Prevention Protocol (APP)", desc: "A podiatry-led triage model with infection and ischaemia pathways — the clinical backbone of EDU-FOOT, developed within the Gauteng public health system." },
               { icon: <Globe className="w-5 h-5" />, title: "IWGDF Guidelines", desc: "International Working Group on the Diabetic Foot (Schaper et al., 2016) — global standards for DFU care, adapted for South African clinical realities." },
               { icon: <Landmark className="w-5 h-5" />, title: "Gauteng Limb Salvage Programme", desc: "Provincial amputation reduction strategy built on four pillars: screening, hotline, wound clinic, and remission." },
               { icon: <BarChart3 className="w-5 h-5" />, title: "ICDM Framework (NDoH)", desc: "Integrated Chronic Disease Management — national framework for coordinated chronic care, within which EDU-FOOT operates seamlessly." },

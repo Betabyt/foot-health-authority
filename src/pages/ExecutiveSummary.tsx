@@ -23,7 +23,7 @@ const marketStats = [
 ];
 
 const why = [
-  { icon: <Target className="w-6 h-6" />, title: "Proven pilot results", text: "Leratong Hospital 2024: 92% screening coverage, 35% fewer amputations, and significant cost savings — from a single trained cohort." },
+  { icon: <Target className="w-6 h-6" />, title: "Proven pilot results", text: "Gauteng pilot site 2024: 92% screening coverage, 35% fewer amputations, and significant cost savings — from a single trained cohort." },
   { icon: <Shield className="w-6 h-6" />, title: "Government-aligned", text: "Designed around NHI readiness, PHC re-engineering, and the NCD Strategic Plan 2022–2027. Procurement pathways are already mapped." },
   { icon: <TrendingUp className="w-6 h-6" />, title: "High social return", text: "Every nurse trained generates substantial avoided healthcare costs. No other NCD intervention delivers comparable preventive returns at primary care level." },
   { icon: <Rocket className="w-6 h-6" />, title: "Execution-ready", text: "Curriculum validated, OSCE framework built, pilot conducted, SANC accreditation in progress. The programme is ready to scale." },

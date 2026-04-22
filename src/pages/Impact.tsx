@@ -6,7 +6,7 @@ import { Shield, TrendingDown, Clock, Banknote, MapPin, BarChart3, Star, CheckCi
 
 const metrics = [
   { value: 92, suffix: "%", label: "Screening Coverage", icon: <Shield className="w-6 h-6" />, sub: "Up from <10% at baseline" },
-  { value: 35, suffix: "%", label: "Reduction in Emergency Amputations", icon: <TrendingDown className="w-6 h-6" />, sub: "Leratong Hospital pilot 2024" },
+  { value: 35, suffix: "%", label: "Reduction in Emergency Amputations", icon: <TrendingDown className="w-6 h-6" />, sub: "Gauteng pilot site 2024" },
   { value: 24, suffix: "hr", prefix: "<", label: "Referral Turnaround", icon: <Clock className="w-6 h-6" />, sub: "Down from 2–4 weeks" },
   { value: 4.5, suffix: "M", prefix: "R", label: "Estimated Cost Savings", icon: <Banknote className="w-6 h-6" />, decimals: 1, sub: "From prevented amputations" },
 ];
@@ -43,13 +43,13 @@ const Impact = () => (
     <PageHero
       badge="Proven Results"
       title="Measurable Impact, Real Lives Saved"
-      description="Every result below is drawn from the Leratong Hospital proof-of-concept pilot. EDU-FOOT tracks every screening, referral, and outcome with full transparency."
+      description="Every result below is drawn from the Gauteng proof-of-concept pilot. EDU-FOOT tracks every screening, referral, and outcome with full transparency."
     />
 
     {/* Key metrics */}
     <section className="section-padding bg-background">
       <div className="container mx-auto">
-        <SectionHeading badge="Pilot Metrics" title="Leratong Hospital pilot — 2024" description="Internal audit results from the first EDU-FOOT implementation site." />
+        <SectionHeading badge="Pilot Metrics" title="Gauteng pilot site — 2024" description="Internal audit results from the first EDU-FOOT implementation site." />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {metrics.map((m, i) => (
             <motion.div

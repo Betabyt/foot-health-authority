@@ -64,9 +64,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-sm uppercase tracking-wider text-primary-foreground/50">Contact</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li>mazizinjokweni@gmail.com</li>
+              <li>info@edufoot.org</li>
+              <li>sponsorship@edufoot.org</li>
               <li>+27 74 463 9939</li>
-              <li>Leratong Hospital, Gauteng</li>
+              <li>Princeton, The Campus, 152 Van Dalen Road South, Ruimsig, Roodepoort, 1724</li>
               <li className="pt-2 text-xs text-primary-foreground/40">
                 CIPC Reg. No. 2026/045897/08
               </li>
