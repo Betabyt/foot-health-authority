@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Users, Eye, Hand, Activity, Zap, ClipboardCheck, Shield, FileText, CheckCircle, Flame, Thermometer, GitMerge } from "lucide-react";
 import infographic from "@/assets/EDU-FOOT_INFORGRAPHIC.png";
 import redFlagsPoster from "@/assets/EDU-FOOT.RED_FLAGS_FINAL.A5.Poster.25.01.2026.png";
+import askLookFeelTestAct from "@/assets/ask-look-feel-test-act.jpeg";
 
 const steps = [
   {
@@ -169,7 +170,12 @@ const Protocol = () => (
     <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
       <div className="container mx-auto">
         <SectionHeading badge="Visual Reference" title="The protocol at a glance" description="A single-page visual summary of the full ASK–LOOK–FEEL–TEST–ACT workflow for clinic use." />
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-md mx-auto">
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto mb-10">
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+            <img src={askLookFeelTestAct} alt="EDU-FOOT ASK–LOOK–FEEL–TEST–ACT protocol infographic — Quick, Simple, Standardised, Saves Limbs" className="w-full h-auto object-contain" />
+          </div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="max-w-md mx-auto">
           <img src={infographic} alt="EDU-FOOT ASK–LOOK–FEEL–TEST–ACT protocol infographic" className="w-full rounded-2xl shadow-lg" />
         </motion.div>
       </div>

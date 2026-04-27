@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { BookOpen, Award, Video, ClipboardCheck, GraduationCap, Users, CheckCircle, X, Smartphone, HeartHandshake, Layers, Star, Quote, Zap, Landmark, Globe, BarChart3, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import trainingFlowDiagram from "@/assets/training-flow-diagram.jpeg";
+import trainingFlow from "@/assets/training-flow.jpeg";
 
 const philosophy = [
   { title: "Simplicity Over Complexity", desc: "Teach practical, evidence-based steps usable at clinic level — no specialist background required." },
@@ -142,6 +144,27 @@ const Training = () => (
             </motion.div>
           ))}
         </div>
+
+        {/* Training Flow Diagram */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-14"
+        >
+          <div className="text-center mb-6">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#0072BC] bg-[#E8F4FD] px-3 py-1 rounded-full mb-2">Programme Flow</span>
+            <h3 className="font-display font-bold text-xl text-foreground">EDU-FOOT Training Pathway</h3>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-border max-w-4xl mx-auto">
+            <img
+              src={trainingFlowDiagram}
+              alt="EDU-FOOT Training Flow Diagram showing the pathway from EDU-FOOT Essential through Advanced and Train-the-Trainer tracks"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
 
@@ -161,6 +184,28 @@ const Training = () => (
             </motion.div>
           ))}
         </div>
+
+        {/* Comprehensive Reference Guide */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-14"
+        >
+          <div className="text-center mb-6">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#0072BC] bg-[#E8F4FD] px-3 py-1 rounded-full mb-2">Comprehensive Reference</span>
+            <h3 className="font-display font-bold text-xl text-foreground">Full Programme Reference Guide</h3>
+            <p className="text-sm text-muted-foreground mt-2 max-w-xl mx-auto">Complete visual reference covering screening steps, risk classification, and referral pathways for trained nurses.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-border max-w-4xl mx-auto">
+            <img
+              src={trainingFlow}
+              alt="EDU-FOOT full programme reference guide covering all screening, risk classification, and referral pathways"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
 

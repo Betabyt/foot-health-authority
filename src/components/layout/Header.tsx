@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/edufoot-new-logo.jpeg";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -26,12 +26,10 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="EDU-FOOT Logo" className="w-10 h-10 rounded-lg object-contain" />
-          <div className="hidden sm:block">
-            <span className="font-display font-bold text-lg text-foreground leading-none">EDU-FOOT™</span>
-            <span className="block text-[10px] text-muted-foreground font-medium tracking-wider uppercase">National Prevention Centre</span>
-          </div>
+        <Link to="/" className="flex items-center">
+          <span className="font-display font-bold text-2xl tracking-tight leading-none">
+            <span className="text-[#0072BC]">EDU-</span><span className="text-[#4CAF50]">FOOT</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
