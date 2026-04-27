@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 import { Heart, BarChart3, Leaf, Users, CheckCircle, ChevronRight, Building2, Landmark, Globe, Briefcase, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import proposalCover from "@/assets/LOOK.FEEL.SMELL.ACT.png";
+import welcomeToEdufoot from "@/assets/new assets/welcome-to-edufoot.png";
+import partnershipProposal from "@/assets/new assets/partnership-sponsorship-proposal.png";
+import sponsorshipProspectus from "@/assets/new assets/sponsorship-prospectus.png";
+import budgetImage from "@/assets/new assets/budget.png";
 
 const reasons = [
   { icon: <Heart className="w-6 h-6" />, title: "Save lives directly", desc: "Every nurse you train becomes a sentinel against preventable amputation. R2,500 per nurse trained prevents complications costing the system R500,000." },
@@ -240,23 +243,29 @@ const Partners = () => (
       </div>
     </section>
 
-    {/* Proposal visual */}
+    {/* Partnership documents showcase */}
     <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-10 items-center max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <img src={proposalCover} alt="EDU-FOOT partnership proposal" className="w-full rounded-2xl shadow-lg" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-            <p className="text-xs font-bold text-[#0072BC] uppercase tracking-wider mb-3">Partnership Proposal</p>
-            <h3 className="font-display text-2xl font-bold text-foreground mb-4">Step Ahead of Amputation</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              Our full partnership proposal outlines the programme, delivery model, sponsorship tiers, and impact reporting framework. Request a copy to explore how your organisation can be part of the solution.
-            </p>
-            <Link to="/contact">
-              <Button variant="cta">Request the Proposal <ChevronRight className="w-5 h-5" /></Button>
-            </Link>
-          </motion.div>
+        <SectionHeading badge="Partnership Materials" title="Step Ahead of Amputation" description="Our full suite of partnership documents — from introduction to investment detail." />
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+          {[
+            { src: welcomeToEdufoot, alt: "Welcome to EDU-FOOT overview", label: "Welcome to EDU-FOOT" },
+            { src: partnershipProposal, alt: "EDU-FOOT partnership & sponsorship proposal", label: "Partnership & Sponsorship Proposal" },
+            { src: sponsorshipProspectus, alt: "EDU-FOOT sponsorship prospectus", label: "Sponsorship Prospectus" },
+            { src: budgetImage, alt: "EDU-FOOT budget overview", label: "Budget Overview" },
+          ].map((doc, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img src={doc.src} alt={doc.alt} className="w-full h-auto object-contain" />
+              </div>
+              <p className="text-xs font-semibold text-muted-foreground text-center mt-3 uppercase tracking-wider">{doc.label}</p>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center">
+          <Link to="/contact">
+            <Button variant="cta">Request the Proposal <ChevronRight className="w-5 h-5" /></Button>
+          </Link>
         </div>
       </div>
     </section>

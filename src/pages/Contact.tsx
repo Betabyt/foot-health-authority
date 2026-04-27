@@ -44,6 +44,7 @@ const Contact = () => {
                 { icon: <Mail className="w-5 h-5" />, label: "General Enquiries", value: "info@edufoot.org" },
                 { icon: <Mail className="w-5 h-5" />, label: "Sponsorship", value: "sponsorship@edufoot.org" },
                 { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "+27 74 463 9939" },
+                { icon: <Phone className="w-5 h-5" />, label: "Secondary / Landline", value: "+27 78 304 9028" },
                 { icon: <MessageCircle className="w-5 h-5" />, label: "WhatsApp", value: "+27 74 463 9939" },
                 { icon: <MapPin className="w-5 h-5" />, label: "Office", value: "Princeton, The Campus\n152 Van Dalen Road South\nRuimsig, Roodepoort\nGauteng, 1724" },
               ].map((c, i) => (

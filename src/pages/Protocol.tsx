@@ -2,7 +2,6 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Users, Eye, Hand, Activity, Zap, ClipboardCheck, Shield, FileText, CheckCircle, Flame, Thermometer, GitMerge } from "lucide-react";
-import infographic from "@/assets/EDU-FOOT_INFORGRAPHIC.png";
 import redFlagsPoster from "@/assets/EDU-FOOT.RED_FLAGS_FINAL.A5.Poster.25.01.2026.png";
 import askLookFeelTestAct from "@/assets/ask-look-feel-test-act.jpeg";
 
@@ -129,7 +128,7 @@ const Protocol = () => (
     <section className="section-padding bg-background">
       <div className="container mx-auto">
         <SectionHeading badge="5-Step Workflow" title="ASK → LOOK → FEEL → TEST → ACT" description="Each step is colour-coded to its risk level and includes a built-in checklist — no prior specialist training required." />
-        <div className="space-y-5 max-w-3xl mx-auto">
+        <div className="space-y-4 max-w-3xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -139,16 +138,16 @@ const Protocol = () => (
               transition={{ delay: i * 0.08 }}
               className="stat-card overflow-hidden p-0"
             >
-              <div className={`px-5 py-3 flex items-center gap-3 ${step.headerColour}`}>
-                <span className="text-white font-display font-bold text-sm tracking-widest uppercase">Step {i + 1}: {step.label}</span>
-                <span className="ml-auto text-white/80 text-xs">{step.time}</span>
+              <div className={`px-4 py-2.5 flex items-center gap-2 flex-wrap ${step.headerColour}`}>
+                <span className="text-white font-display font-bold text-xs sm:text-sm tracking-wider uppercase">Step {i + 1}: {step.label}</span>
+                <span className="ml-auto text-white/80 text-xs shrink-0">{step.time}</span>
               </div>
-              <div className="p-5 flex gap-5 items-start">
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 ${step.colour}`}>
-                  {step.icon}
+              <div className="p-4 sm:p-5 flex gap-3 sm:gap-5 items-start">
+                <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shrink-0 ${step.colour}`}>
+                  <span className="scale-75 sm:scale-100">{step.icon}</span>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-display font-semibold text-lg text-foreground mb-1">{step.title}</h3>
+                  <h3 className="font-display font-semibold text-base sm:text-lg text-foreground mb-1">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{step.desc}</p>
                   <ul className="grid sm:grid-cols-2 gap-1">
                     {step.checklist.map((item, j) => (
@@ -171,12 +170,9 @@ const Protocol = () => (
       <div className="container mx-auto">
         <SectionHeading badge="Visual Reference" title="The protocol at a glance" description="A single-page visual summary of the full ASK–LOOK–FEEL–TEST–ACT workflow for clinic use." />
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto mb-10">
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
             <img src={askLookFeelTestAct} alt="EDU-FOOT ASK–LOOK–FEEL–TEST–ACT protocol infographic — Quick, Simple, Standardised, Saves Limbs" className="w-full h-auto object-contain" />
           </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="max-w-md mx-auto">
-          <img src={infographic} alt="EDU-FOOT ASK–LOOK–FEEL–TEST–ACT protocol infographic" className="w-full rounded-2xl shadow-lg" />
         </motion.div>
       </div>
     </section>
@@ -185,7 +181,7 @@ const Protocol = () => (
     <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
       <div className="container mx-auto">
         <SectionHeading badge="ACT Step Detail" title="Risk Classification Matrix" description="The ACT step produces one of four risk levels — each with a defined action and follow-up interval." />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
           {riskMatrix.map((r, i) => (
             <motion.div
               key={i}
@@ -195,11 +191,11 @@ const Protocol = () => (
               transition={{ delay: i * 0.08 }}
               className="rounded-xl overflow-hidden border border-border shadow-sm"
             >
-              <div className={`${r.bgColour} px-4 py-3`}>
-                <div className={`font-display font-bold text-lg ${r.textColour}`}>{r.level}</div>
+              <div className={`${r.bgColour} px-3 py-2.5 sm:px-4 sm:py-3`}>
+                <div className={`font-display font-bold text-base sm:text-lg ${r.textColour}`}>{r.level}</div>
                 <div className={`text-xs font-medium ${r.textColour} opacity-90`}>{r.label}</div>
               </div>
-              <div className="p-4 bg-white">
+              <div className="p-3 sm:p-4 bg-white">
                 <p className="text-xs text-foreground font-medium mb-2">{r.action}</p>
                 <div className="text-xs text-muted-foreground">
                   <span className="font-semibold">Follow-up:</span> {r.followUp}

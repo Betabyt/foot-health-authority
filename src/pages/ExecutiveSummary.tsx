@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Target, TrendingUp, Shield, Rocket, CheckCircle, ChevronRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import execOnePager from "@/assets/new assets/exec-one-pager.png";
 
 const year1Targets = [
   "300 nurses trained and certified",
@@ -86,6 +87,18 @@ const ExecutiveSummary = () => (
             ))}
           </ul>
         </div>
+      </div>
+    </section>
+
+    {/* Exec one-pager visual */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <SectionHeading badge="One-Pager" title="Executive overview at a glance" description="A single-page summary of the EDU-FOOT™ programme for stakeholders and decision-makers." />
+        <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img src={execOnePager} alt="EDU-FOOT executive one-pager summary" className="w-full h-auto object-contain" />
+          </div>
+        </motion.div>
       </div>
     </section>
 
