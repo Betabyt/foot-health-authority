@@ -17,6 +17,9 @@ import { Button } from "@/components/ui/button";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import heroBg from "@/assets/hero-bg.png";
 import integratedVideo from "@/assets/EDU-FOOT.INTERGRATED.VIDEO.mp4";
+import teamDirImg from "@/assets/EDU-FOOT directors.png";
+import maziziBio from "@/assets/Mazizi Njokweni.png";
+import teamActionImg from "@/assets/10.jpg";
 
 const signalStats = [
   { value: 4.6, suffix: "M", label: "People living with diabetes", decimals: 1 },
@@ -191,6 +194,55 @@ const Index = () => {
             <video controls className="w-full" poster={heroBg}>
               <source src={integratedVideo} type="video/mp4" />
             </video>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Meet the Team */}
+      <section className="section-padding bg-[linear-gradient(180deg,#E8F4FD_0%,#FFFFFF_100%)]">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary mb-2">Meet the Team</p>
+            <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">Clinicians on a mission</h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Three healthcare leaders with direct experience of the amputation crisis, building the solution one nurse at a time.</p>
+          </div>
+          <div className="mb-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-lg">
+              <img src={teamDirImg} alt="EDU-FOOT Leadership Team" className="w-full h-auto object-cover" />
+            </motion.div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "Mazizi Njokweni", role: "Founder & Director", bio: "Senior Podiatrist with firsthand experience of the amputation crisis.", img: maziziBio },
+              { name: "Mpho Bernice Mqaisa", role: "Clinical Training Lead", bio: "Nursing educator ensuring every trained nurse achieves competency." },
+              { name: "Gontse Rosina Phatlane", role: "Systems & Partnerships Lead", bio: "Health systems expert driving sustainable national impact." },
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                {member.img && (
+                  <div className="rounded-xl overflow-hidden mb-4 bg-[#E8F4FD]">
+                    <img src={member.img} alt={member.name} className="w-full h-48 object-cover" />
+                  </div>
+                )}
+                <h3 className="font-display font-bold text-foreground">{member.name}</h3>
+                <p className="text-sm text-primary font-semibold mt-0.5">{member.role}</p>
+                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="text-center mt-10">
+            <Link to="/about">
+              <Button variant="outline" className="rounded-full">
+                Learn More About Our Team
+                <ChevronRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

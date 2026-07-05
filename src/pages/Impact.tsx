@@ -15,6 +15,9 @@ import {
 import impactInfographic from "@/assets/new assets/impact-infographic.png";
 import theoryOfChange from "@/assets/new assets/theory-of-change.png";
 import monitoringEvaluation from "@/assets/new assets/monitoring-evaluation.png";
+import trainingSession1 from "@/assets/1.jpg";
+import trainingSession2 from "@/assets/5.jpg";
+import clinicScreening from "@/assets/17.jpg";
 
 const metrics = [
   {
@@ -205,6 +208,45 @@ const Impact = () => (
               ASK–LOOK–FEEL–TEST–ACT protocol independently, measured 1 month
               post-training.
             </p>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+
+    {/* Pilot in action */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto">
+        <SectionHeading
+          badge="Training & Implementation"
+          title="The pilot in action"
+          centered={false}
+        />
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-xl overflow-hidden shadow-lg"
+          >
+            <img src={trainingSession1} alt="Nurse training session at Leratong" className="w-full h-64 object-cover" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="rounded-xl overflow-hidden shadow-lg"
+          >
+            <img src={trainingSession2} alt="Group training with nurses" className="w-full h-64 object-cover" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="rounded-xl overflow-hidden shadow-lg"
+          >
+            <img src={clinicScreening} alt="Clinical screening at Leratong clinic" className="w-full h-64 object-cover" />
           </motion.div>
         </div>
       </div>

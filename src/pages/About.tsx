@@ -1,9 +1,16 @@
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
-import { Building2, Users, Award, FileCheck, User, Target, Eye, Heart, CheckCircle, Landmark, BookOpen, BarChart3, Globe } from "lucide-react";
+import { Building2, Users, Award, FileCheck, Target, Eye, Heart, CheckCircle, Landmark, BookOpen, BarChart3, Globe } from "lucide-react";
 import logoVideo from "@/assets/EDU-FOOT.Video.LOGO.mp4";
 import logoVideo3 from "@/assets/EDU-FOOT.Video.LOGO.3.mp4";
+import maziziBio from "@/assets/Mazizi Njokweni.png";
+import mphoBio from "@/assets/Mpho Bernice Mqaisa.png";
+import gontseBio from "@/assets/Gontse Phatlane.png";
+import teamTogether from "@/assets/EDU-FOOT directors.png";
+import maziziBioScreening from "@/assets/Mazizi_conducting_screening.jpg";
+import trainingAction1 from "@/assets/10.jpg";
+import trainingAction2 from "@/assets/14.jpg";
 
 const team = [
   {
@@ -119,20 +126,28 @@ const About = () => (
     <section className="section-padding bg-background">
       <div className="container mx-auto max-w-4xl">
         <SectionHeading badge="Leadership" title="The founding team" description="Three clinicians and health systems specialists with direct experience of the problem EDU-FOOT™ was built to solve." />
+        <div className="mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-xl overflow-hidden shadow-lg">
+            <img src={teamTogether} alt="EDU-FOOT Leadership Team" className="w-full h-auto object-cover" />
+          </motion.div>
+        </div>
         <div className="space-y-5">
-          {team.map((member, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="stat-card flex gap-6 items-start">
-              <div className="w-16 h-16 rounded-xl bg-[#E8F4FD] text-[#0072BC] flex items-center justify-center shrink-0">
-                <User className="w-8 h-8" />
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-xl text-foreground">{member.name}</h3>
-                <p className="text-sm text-[#0072BC] font-semibold mb-0.5">{member.role}</p>
-                <p className="text-xs text-muted-foreground font-medium mb-2">{member.credential}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
-              </div>
-            </motion.div>
-          ))}
+          {team.map((member, i) => {
+            const headshots = [maziziBio, mphoBio, gontseBio];
+            return (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="stat-card flex gap-6 items-start">
+                <div className="w-20 h-20 rounded-xl bg-[#E8F4FD] flex items-center justify-center shrink-0 overflow-hidden">
+                  <img src={headshots[i]} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-xl text-foreground">{member.name}</h3>
+                  <p className="text-sm text-[#0072BC] font-semibold mb-0.5">{member.role}</p>
+                  <p className="text-xs text-muted-foreground font-medium mb-2">{member.credential}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -150,6 +165,21 @@ const About = () => (
               </motion.li>
             ))}
           </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* Founder in Action */}
+    <section className="section-padding bg-background">
+      <div className="container mx-auto max-w-4xl">
+        <SectionHeading badge="Founder at Work" title="Mazizi conducting clinical screening" centered={false} />
+        <div className="grid md:grid-cols-2 gap-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-xl overflow-hidden shadow-lg md:col-span-2 lg:col-span-1">
+            <img src={maziziBioScreening} alt="Mazizi conducting diabetic foot screening" className="w-full h-auto object-cover" />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-xl overflow-hidden shadow-lg">
+            <img src={trainingAction1} alt="Training session with nurses" className="w-full h-auto object-cover" />
+          </motion.div>
         </div>
       </div>
     </section>
