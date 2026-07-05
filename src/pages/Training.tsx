@@ -5,6 +5,10 @@ import { BookOpen, Award, Video, ClipboardCheck, GraduationCap, Users, CheckCirc
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import trainingFlow from "@/assets/training-flow.jpeg";
+import trainingImage1 from "@/assets/10.jpg";
+import trainingImage2 from "@/assets/14.jpg";
+import trainingImage3 from "@/assets/15.jpg";
+import protocolRef from "@/assets/LOOK.FEEL.SMELL.ACT.png";
 
 const philosophy = [
   { title: "Simplicity Over Complexity", desc: "Teach practical, evidence-based steps usable at clinic level — no specialist background required." },
@@ -164,12 +168,55 @@ const Training = () => (
           ))}
         </div>
 
-        {/* Comprehensive Reference Guide */}
+        {/* Training Sessions in Action */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
+          className="mt-14"
+        >
+          <div className="text-center mb-6">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#0072BC] bg-[#E8F4FD] px-3 py-1 rounded-full mb-2">In Action</span>
+            <h3 className="font-display font-bold text-xl text-foreground">Training sessions in practice</h3>
+            <p className="text-sm text-muted-foreground mt-2">Nurses learning hands-on screening skills and clinical competency assessment in real-world settings.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-xl overflow-hidden shadow-lg"
+            >
+              <img src={trainingImage1} alt="Nurse practical training session" className="w-full h-64 object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-xl overflow-hidden shadow-lg"
+            >
+              <img src={trainingImage2} alt="Group training with EDU-FOOT facilitators" className="w-full h-64 object-cover" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="rounded-xl overflow-hidden shadow-lg"
+            >
+              <img src={trainingImage3} alt="OSCE assessment station" className="w-full h-64 object-cover" />
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Comprehensive Reference Guide */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
           className="mt-14"
         >
           <div className="text-center mb-6">
