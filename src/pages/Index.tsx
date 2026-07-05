@@ -19,6 +19,8 @@ import heroBg from "@/assets/hero-bg.png";
 import integratedVideo from "@/assets/EDU-FOOT.INTERGRATED.VIDEO.mp4";
 import teamDirImg from "@/assets/EDU-FOOT directors.png";
 import maziziBio from "@/assets/Mazizi Njokweni.png";
+import mphoBio from "@/assets/Mpho Bernice Mqaisa.png";
+import gontseBio from "@/assets/Gontse Phatlane.png";
 import teamActionImg from "@/assets/10.jpg";
 
 const signalStats = [
