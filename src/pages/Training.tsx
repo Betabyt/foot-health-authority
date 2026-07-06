@@ -5,9 +5,9 @@ import { BookOpen, Award, Video, ClipboardCheck, GraduationCap, Users, CheckCirc
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import trainingFlow from "@/assets/training-flow.jpeg";
-import trainingImage1 from "@/assets/10.jpg";
-import trainingImage2 from "@/assets/14.jpg";
-import trainingImage3 from "@/assets/15.jpg";
+import trainingImage1 from "@/assets/1.jpg";
+import trainingImage2 from "@/assets/2.jpg";
+import trainingImage3 from "@/assets/3.jpg";
 import protocolRef from "@/assets/LOOK.FEEL.SMELL.ACT.png";
 
 const philosophy = [
