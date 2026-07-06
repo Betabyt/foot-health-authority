@@ -9,8 +9,7 @@ import mphoBio from "@/assets/Mpho Bernice Mqaisa.png";
 import gontseBio from "@/assets/Gontse Phatlane.png";
 import teamTogether from "@/assets/EDU-FOOT directors.png";
 import maziziBioScreening from "@/assets/Mazizi_conducting_screening.jpg";
-import trainingAction1 from "@/assets/10.jpg";
-import trainingAction2 from "@/assets/14.jpg";
+import screeningImage from "@/assets/17.jpg";
 
 const team = [
   {
@@ -178,7 +177,7 @@ const About = () => (
             <img src={maziziBioScreening} alt="Mazizi conducting diabetic foot screening" className="w-full h-auto object-cover" />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-xl overflow-hidden shadow-lg">
-            <img src={trainingAction1} alt="Training session with nurses" className="w-full h-auto object-cover" />
+            <img src={screeningImage} alt="Clinical screening session" className="w-full h-auto object-cover" />
           </motion.div>
         </div>
       </div>

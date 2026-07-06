@@ -216,8 +216,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { name: "Mazizi Njokweni", role: "Founder & Director", bio: "Senior Podiatrist with firsthand experience of the amputation crisis.", img: maziziBio },
-              { name: "Mpho Bernice Mqaisa", role: "Clinical Training Lead", bio: "Nursing educator ensuring every trained nurse achieves competency." },
-              { name: "Gontse Rosina Phatlane", role: "Systems & Partnerships Lead", bio: "Health systems expert driving sustainable national impact." },
+              { name: "Mpho Bernice Mqaisa", role: "Clinical Training Lead", bio: "Nursing educator ensuring every trained nurse achieves competency.", img: mphoBio },
+              { name: "Gontse Rosina Phatlane", role: "Systems & Partnerships Lead", bio: "Health systems expert driving sustainable national impact.", img: gontseBio },
             ].map((member, i) => (
               <motion.div
                 key={i}
